@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Droplet, Wheat, Beer, ArrowRight } from "lucide-react";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -50,17 +51,20 @@ export default function Home() {
       </header>
 
       <section id="home" className={styles.hero}>
-        <div className="container">
+        <div className="container" style={{ position: "relative", zIndex: 3 }}>
           <div className={`${styles.heroContent} animate-fade-up`}>
-            <h1 className={styles.heroTitle}>Extracts for Your Products</h1>
-            <p className={styles.heroSubtitle}>
-              Cereal and Malt is the leading manufacturer and supplier of malt extracts and malted ingredients to the African markets. We craft the finest ingredients to elevate your brand.
-            </p>
-            <div className="flex gap-4">
-              <button className="btn btn-primary">Discover Products</button>
-              <button className="btn glass-panel" style={{ padding: "1rem 2rem", border: "1px solid rgba(42,30,18,0.1)", background: "rgba(255,255,255,0.5)" }}>Contact Us</button>
+            <div className={styles.heroLogoGroup}>
+              <h1 className={styles.heroBigText}>CEREAL & MALT.</h1>
+              <span className={styles.heroSmallText}>EXTRACTS</span>
             </div>
           </div>
+        </div>
+        
+        {/* Floating elements for unique hero */}
+        <div className={styles.heroFloatingElements}>
+          <div className={`${styles.floatingOrb} ${styles.orb1}`}></div>
+          <div className={`${styles.floatingOrb} ${styles.orb2}`}></div>
+          <div className={`${styles.floatingOrb} ${styles.orb3}`}></div>
         </div>
       </section>
 
@@ -70,20 +74,29 @@ export default function Home() {
           <p className={styles.sectionSubtitle}>Tailored malt extracts for baking, brewing, and beverages.</p>
         </div>
         <div className={styles.featuresGrid}>
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>🌾</div>
-            <h3 className={styles.featureTitle}>Liquid Malt Extract</h3>
-            <p>Rich, unrefined liquid extract providing natural color, flavor, and fermentable sugars for a variety of applications.</p>
+          <div className={`${styles.featureCard} ${styles.cardLiquid}`}>
+            <div className={styles.cardOverlay}></div>
+            <div className={styles.featureContent}>
+              <div className={styles.featureIcon}><Droplet size={32} strokeWidth={1.5} /></div>
+              <h3 className={styles.featureTitle}>Liquid Malt Extract</h3>
+              <p>Rich, unrefined liquid extract providing natural color, flavor, and fermentable sugars for a variety of applications.</p>
+            </div>
           </div>
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>💨</div>
-            <h3 className={styles.featureTitle}>Dried Malt Extract</h3>
-            <p>Convenient powdered malt, perfect for baking and specialized beverage formulations requiring extended shelf life.</p>
+          <div className={`${styles.featureCard} ${styles.cardDried}`}>
+            <div className={styles.cardOverlay}></div>
+            <div className={styles.featureContent}>
+              <div className={styles.featureIcon}><Wheat size={32} strokeWidth={1.5} /></div>
+              <h3 className={styles.featureTitle}>Dried Malt Extract</h3>
+              <p>Convenient powdered malt, perfect for baking and specialized beverage formulations requiring extended shelf life.</p>
+            </div>
           </div>
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>🍺</div>
-            <h3 className={styles.featureTitle}>Brewing Ingredients</h3>
-            <p>High-quality specialized ingredients crafted specifically to meet the demands of modern brewing.</p>
+          <div className={`${styles.featureCard} ${styles.cardBrewing}`}>
+            <div className={styles.cardOverlay}></div>
+            <div className={styles.featureContent}>
+              <div className={styles.featureIcon}><Beer size={32} strokeWidth={1.5} /></div>
+              <h3 className={styles.featureTitle}>Brewing Ingredients</h3>
+              <p>High-quality specialized ingredients crafted specifically to meet the demands of modern brewing.</p>
+            </div>
           </div>
         </div>
       </section>
