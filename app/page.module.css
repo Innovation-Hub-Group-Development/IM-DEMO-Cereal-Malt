@@ -110,7 +110,6 @@
   line-height: 0.9;
   letter-spacing: -0.02em;
   margin: 0;
-  text-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 .heroSmallText {
@@ -119,7 +118,6 @@
   color: #ffffff;
   letter-spacing: 0.4em;
   margin-top: 0.5rem;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
   margin-right: -0.4em; /* Compensate for the letter-spacing on the right edge */
 }
 
@@ -258,20 +256,15 @@
   justify-content: flex-end;
 }
 
-.cardLiquid {
-  background-image: url('/images/card_liquid_malt.jpg');
+.cardBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
-}
-.cardDried {
-  background-image: url('/images/card_dried_malt.jpg');
-  background-size: cover;
-  background-position: center;
-}
-.cardBrewing {
-  background-image: url('/images/card_brewing_ingredients.jpg');
-  background-size: cover;
-  background-position: center;
+  z-index: 0;
 }
 
 .cardOverlay {
