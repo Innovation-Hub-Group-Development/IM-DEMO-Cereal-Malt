@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { Droplet, Wheat, Beer, ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import ProductBanner from "@/components/ProductBanner";
+import HorizontalTimeline from "@/components/HorizontalTimeline";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -131,6 +133,9 @@ export default function Home() {
 
       {/* Wrapping the rest of the content in a relative container so it slides over the sticky hero */}
       <div style={{ position: "relative", zIndex: 10, background: "#edebe6" }}>
+      
+      <ProductBanner />
+
       <motion.section 
         id="products" 
         className={`container ${styles.section}`}
@@ -218,37 +223,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      <section id="history" className={styles.splitSection}>
-        <motion.div 
-          className={styles.splitContent}
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={smoothTransition}
-        >
-          <div style={{ maxWidth: "500px", margin: "0 auto" }}>
-            <h2 className={styles.splitTitle}>Our History</h2>
-            <p className={styles.splitText}>
-              Established in Johannesburg since 1945, Cereal & Malt has been manufacturing malt for 60 golden years.
-            </p>
-            <button className={styles.splitBtn}>READ THE WHOLE STORY</button>
-          </div>
-        </motion.div>
-        <motion.div 
-          className={styles.splitImageContainer}
-          initial={{ opacity: 0, scale: 1.1 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.5, ease: customEase }}
-        >
-          <Image 
-            src="/images/history.jpg" 
-            alt="Historical Cereal & Malt Factory" 
-            fill
-            className={styles.splitImage}
-          />
-        </motion.div>
-      </section>
+      <HorizontalTimeline />
 
       <section id="commitment" className={`${styles.splitSection} ${styles.splitReverse}`}>
         <motion.div 
